@@ -1,6 +1,6 @@
 # Table of contents
 
-* [README](README.md)
+* [Initial page](README.md)
 * [GetGameInfo API](readme.md)
 * [Get Balance API](get-balance-api.md)
 * [PlaceBet API](placebet-api.md)
