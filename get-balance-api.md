@@ -1,10 +1,10 @@
 ---
-description: Get information about the game and player
+description: Get bet credit of player
 ---
 
-# GetGameInfo API
+# Get Balance API
 
-{% api-method method="get" host="host" path="/FootBallStrike/GetGameInfo/" %}
+{% api-method method="get" host="host" path="/FootBallStrike/GetBalance/" %}
 {% api-method-summary %}
 Get Cakes
 {% endapi-method-summary %}
@@ -15,6 +15,12 @@ This endpoint allows you to get free cakes.
 
 {% api-method-spec %}
 {% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="PlayerId" type="number" required=true %}
+Player id
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authentication" type="string" required=true %}
 Authentication token to track down who is emptying our stocks.
@@ -30,28 +36,10 @@ Cake successfully retrieved.
 
 ```javascript
 {
-    "DisplayName":"xxx1234",
-    "PlayerId":”123456”,
-    "Currency":"EUR",
-    "Balance":”700.00”,
-    "MaxBet":”1300.00”,
-    "MinBet":”1.00”,
-    "Chips":"1,5,25,100,500",
-    "MaxPayout":”100000”,
-    "DefaultChip":”5”,
-    "TableLimit":[
-        {
-            "BetOption":"Tiger",
-            "BetOptionMin":”1.00”,
-            "BetOptionMax":”800.00”
-        },
-        {
-            "BetOption":"Crab",
-            "BetOptionMin":”1.00”,
-            "BetOptionMax":”800.00”
-        }
-    ]
-}
+    "Balance": ”7426.83”,
+    "IsOnline": ”true”
+} 
+
 ```
 {% endapi-method-response-example %}
 
@@ -62,7 +50,7 @@ Could not find a cake matching this query.
 
 ```javascript
 {
-    "message": "Could not find the page"
+    "message": "Page not found."
 }
 ```
 {% endapi-method-response-example %}
